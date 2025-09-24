@@ -8,10 +8,20 @@ import logging
 import numpy as np
 from torch import nn
 from torchvision import transforms
+import torch
 
 from dinov3.data.transforms import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD, GaussianBlur, make_normalize_transform
 
 logger = logging.getLogger("dinov3")
+
+
+class ToFloatTensorIfNeeded:
+    def __call__(self, x):
+        # If already a Tensor, just ensure float dtype
+        if isinstance(x, torch.Tensor):
+            return x.float()
+        # If numpy array or PIL, defer to torchvision ToTensor
+        return transforms.ToTensor()(x)
 
 
 class DataAugmentationDINO(object):
@@ -142,7 +152,7 @@ class DataAugmentationDINO(object):
         # normalization
         self.normalize = transforms.Compose(
             [
-                transforms.ToTensor(),
+                ToFloatTensorIfNeeded(),
                 make_normalize_transform(mean=mean, std=std),
             ]
         )
@@ -160,6 +170,63 @@ class DataAugmentationDINO(object):
                 [resize_global, color_jittering, global_transfo2_extra, self.normalize]
             )
             self.local_transfo = transforms.Compose([color_jittering, local_transfo_extra, self.normalize])
+
+    @staticmethod
+    def microscopy_extra_augs():
+        # Rotations by 90 deg multiples, flips, blur/noise/erasing
+        return transforms.Compose(
+            [
+                transforms.RandomApply([transforms.RandomRotation([90, 90])], p=0.25),
+                transforms.RandomApply([transforms.RandomRotation([180, 180])], p=0.25),
+                transforms.RandomApply([transforms.RandomRotation([270, 270])], p=0.25),
+                transforms.RandomHorizontalFlip(p=0.5),
+                transforms.RandomVerticalFlip(p=0.5),
+                GaussianBlur(p=0.2),
+                transforms.RandomApply([transforms.Lambda(lambda x: x + 0.01 * torch.randn_like(x))], p=0.2),
+                transforms.RandomErasing(p=0.2, scale=(0.02, 0.06), ratio=(0.3, 3.3)),
+            ]
+        )
+
+
+class DataAugmentationMicroscopy(DataAugmentationDINO):
+    def __init__(self, *args, use_dynamic_stats: bool = True, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.allow_dynamic_stats = bool(use_dynamic_stats)
+        # dynamic per-sample normalization buffers
+        C = 5  # expected 5 fluorescence channels
+        default_mean = torch.tensor(self.mean if isinstance(self.mean, (list, tuple)) else [0.0] * C)
+        default_std = torch.tensor(self.std if isinstance(self.std, (list, tuple)) else [1.0] * C)
+        self._dyn_mean = default_mean.float()
+        self._dyn_std = default_std.float()
+
+        # build dynamic normalize that reads self._dyn_mean/std
+        self.dynamic_normalize = transforms.Compose(
+            [
+                ToFloatTensorIfNeeded(),
+                transforms.Lambda(
+                    lambda t: (t - self._dyn_mean.view(-1, 1, 1)) / (self._dyn_std.view(-1, 1, 1) + 1e-6)
+                ),
+            ]
+        )
+
+        # Rebuild pipelines for microscopy: remove RGB-only color ops (ColorJitter/Grayscale/Solarize)
+        # Keep only microscopy-friendly augs + dynamic normalize (works for 5 channels)
+        extra = self.microscopy_extra_augs()
+
+        safe_compose = transforms.Compose([extra, self.dynamic_normalize])
+
+        self.global_transfo1 = safe_compose
+        self.global_transfo2 = safe_compose
+        self.local_transfo = safe_compose
+
+    def set_dynamic_stats(self, mean, std):
+        if not getattr(self, "allow_dynamic_stats", True):
+            return
+        # mean/std expected as sequence length C
+        mean_t = torch.as_tensor(mean, dtype=torch.float32)
+        std_t = torch.as_tensor(std, dtype=torch.float32)
+        self._dyn_mean = mean_t
+        self._dyn_std = std_t
 
     def __call__(self, image):
         output = {}

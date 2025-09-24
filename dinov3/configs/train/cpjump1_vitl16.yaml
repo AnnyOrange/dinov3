@@ -1,0 +1,122 @@
+MODEL:
+  META_ARCHITECTURE: SSLMetaArch
+  DEVICE: cuda
+  WEIGHTS: ''
+  DTYPE: float32
+compute_precision:
+  param_dtype: fp16
+  reduce_dtype: fp32
+  sharding_strategy: SHARD_GRAD_OP
+dino:
+  loss_weight: 1.0
+  global_ignore_diagonal: true
+  head_n_prototypes: 131072
+  head_bottleneck_dim: 512
+  head_norm_last_layer: true
+  head_nlayers: 3
+  head_hidden_dim: 8192
+  koleo_loss_weight: 0.1
+  koleo_loss_distributed: false
+  koleo_topk: 1
+ibot:
+  loss_weight: 1.0
+  mask_sample_probability: 0.5
+  mask_ratio_min_max: [0.1, 0.5]
+  separate_head: true
+  head_n_prototypes: 65536
+  head_bottleneck_dim: 384
+  head_norm_last_layer: false
+  head_nlayers: 3
+  head_hidden_dim: 4096
+train:
+  batch_size_per_gpu: 32
+  dataset_path: CPJump1WebDataset:root=/mnt/deepcad_nfs/CPJUMP1_dataset_dinov3/:split=train
+  output_dir: ./outputs/cpjump1_vitl16
+  saveckp_freq: 1
+  seed: 0
+  num_workers: 32
+  OFFICIAL_EPOCH_LENGTH: 1000
+  monitor_gradient_norm: false
+  chunk_schedule: []
+  cache_dataset: false
+  use_teacher_head: true
+  learn_from_teacher_tokens: false
+  centering: sinkhorn_knopp
+  checkpointing: true
+  compile: false
+  cudagraphs: false
+student:
+  arch: vit_large
+  patch_size: 16
+  drop_path_rate: 0.2
+  layerscale: 1.0e-05
+  patch_drop: 0.0
+  pretrained_weights: ''
+  ffn_layer: mlp
+  ffn_ratio: 4.0
+  # resume_from_teacher_chkpt: '/mnt/deepcad_nfs/xuzijing/checkpoints/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth'
+  resume_from_teacher_chkpt: '/home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16/ckpt/39999/teacher_checkpoint.pth'
+  qkv_bias: true
+  proj_bias: true
+  ffn_bias: true
+  norm_layer: layernormbf16
+  n_storage_tokens: 0
+  mask_k_bias: false
+  in_chans: 5
+  patch_embed_strategy: channelvit
+  pos_embed_type: ropenew
+  pos_embed_rope_base: 100.0
+  pos_embed_rope_min_period: null
+  pos_embed_rope_max_period: null
+  pos_embed_rope_normalize_coords: separate
+  pos_embed_rope_shift_coords: null
+  pos_embed_rope_jitter_coords: null
+  pos_embed_rope_rescale_coords: 2
+  pos_embed_rope_dtype: bf16
+teacher:
+  momentum_teacher: 0.992
+  final_momentum_teacher: 1
+  warmup_teacher_temp: 0.04
+  teacher_temp: 0.07
+  warmup_teacher_temp_epochs: 20
+  in_chans: 5
+distillation:
+  enabled: false
+multidistillation:
+  enabled: false
+optim:
+  epochs: 50
+  optimizer: adamw
+  weight_decay: 0.04
+  weight_decay_end: 0.2
+  lr: 0.0001
+  warmup_epochs: 20
+  min_lr: 1.0e-06
+  clip_grad: 3.0
+  freeze_last_layer_epochs: 1
+  scaling_rule: sqrt_wrt_1024
+  patch_embed_lr_mult: 0.25
+  dino_head_wd_multiplier: 1.0
+  layerwise_decay: 0.95
+  multi_tensor_optim: true
+  adamw_beta1: 0.9
+  adamw_beta2: 0.999
+crops:
+  global_crops_scale: [0.3, 1.0]
+  local_crops_number: 4
+  local_crops_scale: [0.05, 0.3]
+  global_crops_size: 256
+  local_crops_size: 112
+  localcrops_subset_of_globalcrops: false
+  share_color_jitter: false
+  horizontal_flips: true
+  gram_teacher_crops_size: null
+  gram_teacher_no_distortions: false
+  microscopy: true
+  use_dynamic_stats: false
+  rgb_mean: [2302.585357163912, 2262.1018075014476,4284.0141763303445, 2382.809901063049, 1496.6019960251908]
+  rgb_std:  [2389.2512721729604, 2974.1991759111643, 6384.339457351192, 3640.1488634424036, 3056.291301930611]
+checkpointing:
+  period: 2000
+  max_to_keep: 10
+

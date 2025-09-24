@@ -15,6 +15,7 @@ import dinov3.distributed as distributed
 from dinov3.checkpointer import init_fsdp_model_from_checkpoint
 from dinov3.configs import get_default_config
 from dinov3.data import DataAugmentationDINO
+from dinov3.data.augmentations import DataAugmentationMicroscopy
 from dinov3.fsdp.ac_compile_parallelize import ac_compile_parallelize
 from dinov3.layers.dino_head import DINOHead
 from dinov3.loss import DINOLoss, GramLoss, KoLeoLoss, KoLeoLossDistributed, iBOTPatchLoss
@@ -326,7 +327,8 @@ class SSLMetaArch(nn.Module):
             init_fsdp_model_from_checkpoint(
                 self.student,
                 self.cfg.student.resume_from_teacher_chkpt,
-                skip_load_keys=["dino_loss.center", "ibot_patch_loss.center"],
+                # Skip heads to avoid prototype-size mismatches when finetuning
+                skip_load_keys=["dino_loss.center", "ibot_patch_loss.center", "dino_head", "ibot_head"],
                 keys_not_sharded=["backbone.rope_embed.periods", "qkv.bias_mask"],
                 process_group=distributed.get_process_subgroup(),
             )
@@ -740,7 +742,8 @@ class SSLMetaArch(nn.Module):
             torch._foreach_add_(gramteacher_param_list, teacher_param_list, alpha=1 - m)
 
     def build_data_augmentation_dino(self, cfg):
-        return DataAugmentationDINO(
+        Aug = DataAugmentationMicroscopy if getattr(cfg.crops, "microscopy", False) else DataAugmentationDINO
+        return Aug(
             cfg.crops.global_crops_scale,
             cfg.crops.local_crops_scale,
             cfg.crops.local_crops_number,
@@ -753,6 +756,7 @@ class SSLMetaArch(nn.Module):
             horizontal_flips=cfg.crops.horizontal_flips,
             mean=cfg.crops.rgb_mean,
             std=cfg.crops.rgb_std,
+            use_dynamic_stats=getattr(cfg.crops, "use_dynamic_stats", True),
         )
 
     def get_maybe_fused_params_for_submodel(self, m: nn.Module):

@@ -573,6 +573,17 @@ def do_train(cfg, model, resume=False):
                 keep_last_n_checkpoints(ckpt_dir, cfg.checkpointing.max_to_keep)
                 if "keep_every" in cfg.checkpointing and (iteration + 1) % cfg.checkpointing.keep_every == 0:
                     keep_checkpoint_copy(ckpt_dir / str(iteration))
+                # Also save a consolidated .pth for teacher EMA for easier downstream eval
+                try:
+                    new_state_dict = model.model_ema.state_dict()
+                    for k, tensor in list(new_state_dict.items()):
+                        if isinstance(tensor, DTensor):
+                            new_state_dict[k] = tensor.full_tensor()
+                    pth_path = (ckpt_dir / str(iteration)) / "teacher_checkpoint.pth"
+                    torch.save({"teacher": new_state_dict}, pth_path)
+                    logger.info("Saved consolidated .pth: %s", pth_path)
+                except Exception:
+                    logger.exception("Failed saving consolidated .pth at checkpoint %s", iteration)
 
         iteration = iteration + 1
     metric_logger.synchronize_between_processes()
@@ -595,7 +606,7 @@ def main(argv=None):
     else:
         setup_job(output_dir=args.output_dir, seed=args.seed)
         cfg = setup_config(args, strict_cfg=False)
-        logger.info(cfg)
+        logger.info("%s", cfg)
         setup_logging(
             output=os.path.join(os.path.abspath(args.output_dir), "nan_logs"),
             name="nan_logger",

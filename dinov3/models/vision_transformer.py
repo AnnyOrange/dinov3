@@ -63,6 +63,7 @@ class DinoVisionTransformer(nn.Module):
         img_size: int = 224,
         patch_size: int = 16,
         in_chans: int = 3,
+        patch_embed_strategy: str = "standard",
         pos_embed_rope_base: float = 100.0,
         pos_embed_rope_min_period: float | None = None,
         pos_embed_rope_max_period: float | None = None,
@@ -100,6 +101,7 @@ class DinoVisionTransformer(nn.Module):
         self.n_blocks = depth
         self.num_heads = num_heads
         self.patch_size = patch_size
+        self.patch_embed_strategy = patch_embed_strategy
 
         self.patch_embed = PatchEmbed(
             img_size=img_size,
@@ -107,6 +109,7 @@ class DinoVisionTransformer(nn.Module):
             in_chans=in_chans,
             embed_dim=embed_dim,
             flatten_embedding=False,
+            patch_embed_strategy=self.patch_embed_strategy,
         )
 
         self.cls_token = nn.Parameter(torch.empty(1, 1, embed_dim, device=device))

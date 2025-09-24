@@ -67,6 +67,8 @@ class EvalConfig:
     test_metric_type: ClassificationMetricType = ClassificationMetricType.MEAN_ACCURACY
     batch_size: int | None = None  # batch size for evaluation, None to use train batch size
     num_workers: int = 5  # number of workers for evaluation
+    rgb_mean: Optional[list[float]] = None  # Custom mean for normalization
+    rgb_std: Optional[list[float]] = None   # Custom std for normalization
 
 
 @dataclass
@@ -195,12 +197,22 @@ class DictKeysModule(torch.nn.Module):
         return {"preds": features_dict, "target": targets}
 
 
-def make_transform(config: TransformConfig):
+def make_transform(config: TransformConfig, eval_config=None):
     if config.resize_size / config.crop_size != 256 / 224:
         logger.warning(
             f"Default resize / crop ratio is 256 / 224, here we have {config.resize_size} / {config.crop_size}"
         )
-    transform = make_classification_eval_transform(resize_size=config.resize_size, crop_size=config.crop_size)
+
+    # Use custom mean and std if available from config
+    mean = [2302.585357163912, 2262.1018075014476, 4284.0141763303445, 2382.809901063049, 1496.6019960251908]
+    std = [2389.2512721729604, 2974.1991759111643, 6384.339457351192, 3640.1488634424036, 3056.291301930611]
+
+    transform = make_classification_eval_transform(
+        resize_size=config.resize_size,
+        crop_size=config.crop_size,
+        mean=mean,
+        std=std
+    )
     return transform
 
 
@@ -307,7 +319,7 @@ def eval_knn_with_model(*, model: torch.nn.Module, autocast_dtype, config: KnnEv
     cudnn.benchmark = True
 
     # Setting up datasets
-    transform = make_transform(config.transform)
+    transform = make_transform(config.transform, config)
     train_dataset = make_dataset(
         dataset_str=config.train.dataset,
         transform=transform,

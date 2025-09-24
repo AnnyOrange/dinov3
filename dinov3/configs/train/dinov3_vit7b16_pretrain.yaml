@@ -61,6 +61,8 @@ train:
 student:
   arch: vit_7b
   patch_size: 16
+  in_chans: 5
+  patch_embed_strategy: inflate
   drop_path_rate: 0.4
   layerscale: 1.0e-05
   patch_drop: 0.0
@@ -94,7 +96,7 @@ teacher:
   warmup_teacher_temp: null
   teacher_temp: null
   warmup_teacher_temp_epochs: null
-  in_chans: 3
+  in_chans: 5
 distillation:
   enabled: false
   full_cfg_path: ''
@@ -136,6 +138,7 @@ crops:
   localcrops_subset_of_globalcrops: false
   share_color_jitter: false
   horizontal_flips: false
+  microscopy: false
   rgb_mean:
   - 0.485
   - 0.456

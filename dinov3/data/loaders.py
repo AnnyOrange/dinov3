@@ -68,6 +68,10 @@ def _parse_dataset_str(dataset_str: str):
         class_ = CocoCaptions
         if "split" in kwargs:
             kwargs["split"] = CocoCaptions.Split[kwargs["split"]]
+    elif name == "CPJump1WebDataset":
+        from .datasets import CPJump1WebDataset as class_
+    elif name == "CPJump1PostgresNPY":
+        from .datasets import CPJump1PostgresNPY as class_
     else:
         raise ValueError(f'Unsupported dataset "{name}"')
 
@@ -96,7 +100,10 @@ def make_dataset(
     class_, kwargs = _parse_dataset_str(dataset_str)
     dataset = class_(transform=transform, target_transform=target_transform, **kwargs)
 
-    logger.info(f"# of dataset samples: {len(dataset):,d}")
+    try:
+        logger.info(f"# of dataset samples: {len(dataset):,d}")
+    except TypeError:
+        logger.info("dataset has no length (IterableDataset)")
 
     # Aggregated datasets do not expose (yet) these attributes, so add them.
     if not hasattr(dataset, "transform"):
@@ -116,7 +123,11 @@ def _make_sampler(
     size: int = -1,
     advance: int = 0,
 ) -> Optional[Sampler]:
-    sample_count = len(dataset)
+    try:
+        sample_count = len(dataset)
+    except TypeError:
+        logger.info("dataset is IterableDataset; no sampler will be used")
+        return None
 
     if type == SamplerType.INFINITE:
         logger.info("sampler: infinite")
@@ -220,7 +231,8 @@ def make_data_loader(
         num_workers=num_workers,
         pin_memory=True,
         drop_last=drop_last,
-        persistent_workers=persistent_workers,
+        persistent_workers=(num_workers > 0),
+        prefetch_factor=1 if num_workers > 0 else None,
         collate_fn=collate_fn,
     )
 

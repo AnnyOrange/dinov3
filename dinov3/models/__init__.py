@@ -36,6 +36,7 @@ def build_model(args, only_teacher=False, img_size=224, device=None):
         vit_kwargs = dict(
             img_size=img_size,
             patch_size=args.patch_size,
+            in_chans=getattr(args, "in_chans", 3),
             pos_embed_rope_base=args.pos_embed_rope_base,
             pos_embed_rope_min_period=args.pos_embed_rope_min_period,
             pos_embed_rope_max_period=args.pos_embed_rope_max_period,
@@ -55,6 +56,9 @@ def build_model(args, only_teacher=False, img_size=224, device=None):
             untie_global_and_local_cls_norm=args.untie_global_and_local_cls_norm,
             device=device,
         )
+        # pass patch embed strategy if present in cfg
+        if hasattr(args, "patch_embed_strategy"):
+            vit_kwargs["patch_embed_strategy"] = args.patch_embed_strategy
         teacher = vits.__dict__[args.arch](**vit_kwargs)
         teacher = init_fp8(teacher, args)
         if only_teacher:

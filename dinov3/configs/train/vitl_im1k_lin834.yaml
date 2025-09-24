@@ -60,6 +60,8 @@ train:
 student:
   arch: vit_large
   patch_size: 16
+  in_chans: 5
+  patch_embed_strategy: inflate
   drop_path_rate: 0.3
   layerscale: 1.0e-05
   patch_drop: 0.0
@@ -132,6 +134,7 @@ crops:
   localcrops_subset_of_globalcrops: false
   share_color_jitter: false
   horizontal_flips: true
+  microscopy: false
 evaluation:
   eval_period_iterations: 12500
   low_freq_every: 5

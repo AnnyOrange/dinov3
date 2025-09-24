@@ -1,0 +1,1491 @@
+<frozen runpy>:128: RuntimeWarning: 'dinov3.train.train' found in sys.modules after import of package 'dinov3.train', but prior to execution of 'dinov3.train.train'; this may result in unpredictable behaviour
+<frozen runpy>:128: RuntimeWarning: 'dinov3.train.train' found in sys.modules after import of package 'dinov3.train', but prior to execution of 'dinov3.train.train'; this may result in unpredictable behaviour
+<frozen runpy>:128: RuntimeWarning: 'dinov3.train.train' found in sys.modules after import of package 'dinov3.train', but prior to execution of 'dinov3.train.train'; this may result in unpredictable behaviour
+<frozen runpy>:128: RuntimeWarning: 'dinov3.train.train' found in sys.modules after import of package 'dinov3.train', but prior to execution of 'dinov3.train.train'; this may result in unpredictable behaviour
+I20250918 17:18:10 3103889 dinov3 torch_distributed_wrapper.py:255] PyTorch distributed environment: TorchElastic job (f251c8a8-e29b-42f5-a4bd-9a54a1d72e10) using inspur:39179 (rank=0, world size=4)
+[rank1]:[W918 17:18:11.527359833 ProcessGroupNCCL.cpp:5023] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+[rank3]:[W918 17:18:11.596652955 ProcessGroupNCCL.cpp:5023] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+W20250918 17:18:11 3103889 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+
+[rank0]:[W918 17:18:11.615414823 ProcessGroupNCCL.cpp:5023] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+[rank2]:[W918 17:18:11.618223678 ProcessGroupNCCL.cpp:5023] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can specify device_id in init_process_group() to force use of a particular device.
+inspur:3103889:3103889 [0] NCCL INFO Bootstrap: Using ens8:172.16.0.230<0>
+inspur:3103889:3103889 [0] NCCL INFO cudaDriverVersion 12000
+inspur:3103889:3103889 [0] NCCL INFO NCCL version 2.27.3+cuda12.9
+inspur:3103889:3103889 [0] NCCL INFO Comm config Blocking set to 1
+inspur:3103891:3103891 [2] NCCL INFO cudaDriverVersion 12000
+inspur:3103890:3103890 [1] NCCL INFO cudaDriverVersion 12000
+inspur:3103892:3103892 [3] NCCL INFO cudaDriverVersion 12000
+inspur:3103892:3103892 [3] NCCL INFO Bootstrap: Using ens8:172.16.0.230<0>
+inspur:3103890:3103890 [1] NCCL INFO Bootstrap: Using ens8:172.16.0.230<0>
+inspur:3103891:3103891 [2] NCCL INFO Bootstrap: Using ens8:172.16.0.230<0>
+inspur:3103892:3103892 [3] NCCL INFO NCCL version 2.27.3+cuda12.9
+inspur:3103890:3103890 [1] NCCL INFO NCCL version 2.27.3+cuda12.9
+inspur:3103891:3103891 [2] NCCL INFO NCCL version 2.27.3+cuda12.9
+inspur:3103892:3103892 [3] NCCL INFO Comm config Blocking set to 1
+inspur:3103891:3103891 [2] NCCL INFO Comm config Blocking set to 1
+inspur:3103890:3103890 [1] NCCL INFO Comm config Blocking set to 1
+inspur:3103891:3104079 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+inspur:3103890:3104080 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+inspur:3103892:3104078 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+inspur:3103889:3104077 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+inspur:3103889:3104077 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB ens8:172.16.0.230<0>
+inspur:3103889:3104077 [0] NCCL INFO Initialized NET plugin IB
+inspur:3103889:3104077 [0] NCCL INFO Assigned NET plugin IB to comm
+inspur:3103889:3104077 [0] NCCL INFO Using network IB
+inspur:3103891:3104079 [2] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB ens8:172.16.0.230<0>
+inspur:3103891:3104079 [2] NCCL INFO Initialized NET plugin IB
+inspur:3103891:3104079 [2] NCCL INFO Assigned NET plugin IB to comm
+inspur:3103891:3104079 [2] NCCL INFO Using network IB
+inspur:3103892:3104078 [3] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB ens8:172.16.0.230<0>
+inspur:3103892:3104078 [3] NCCL INFO Initialized NET plugin IB
+inspur:3103892:3104078 [3] NCCL INFO Assigned NET plugin IB to comm
+inspur:3103892:3104078 [3] NCCL INFO Using network IB
+inspur:3103890:3104080 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/RoCE [RO]; OOB ens8:172.16.0.230<0>
+inspur:3103890:3104080 [1] NCCL INFO Initialized NET plugin IB
+inspur:3103890:3104080 [1] NCCL INFO Assigned NET plugin IB to comm
+inspur:3103890:3104080 [1] NCCL INFO Using network IB
+inspur:3103890:3104080 [1] NCCL INFO ncclCommInitRankConfig comm 0xaee69a0 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId f000 commId 0x51eaab8148b27a38 - Init START
+inspur:3103891:3104079 [2] NCCL INFO ncclCommInitRankConfig comm 0xb2121b0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 1f000 commId 0x51eaab8148b27a38 - Init START
+inspur:3103889:3104077 [0] NCCL INFO ncclCommInitRankConfig comm 0xa248320 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId e000 commId 0x51eaab8148b27a38 - Init START
+inspur:3103892:3104078 [3] NCCL INFO ncclCommInitRankConfig comm 0xa487760 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 20000 commId 0x51eaab8148b27a38 - Init START
+inspur:3103890:3104080 [1] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+inspur:3103892:3104078 [3] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+inspur:3103891:3104079 [2] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+inspur:3103889:3104077 [0] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+inspur:3103892:3104078 [3] NCCL INFO Bootstrap timings total 0.000763 (create 0.000026, send 0.000095, recv 0.000095, ring 0.000309, delay 0.000000)
+inspur:3103891:3104079 [2] NCCL INFO Bootstrap timings total 0.011074 (create 0.000034, send 0.000134, recv 0.010336, ring 0.000216, delay 0.000000)
+inspur:3103890:3104080 [1] NCCL INFO Bootstrap timings total 0.011791 (create 0.000059, send 0.000275, recv 0.000634, ring 0.000338, delay 0.000001)
+inspur:3103889:3104077 [0] NCCL INFO Bootstrap timings total 0.001243 (create 0.000053, send 0.000297, recv 0.000057, ring 0.000102, delay 0.000001)
+inspur:3103892:3104078 [3] NCCL INFO Setting affinity for GPU 3 to 0-31,64-95
+inspur:3103890:3104080 [1] NCCL INFO Setting affinity for GPU 1 to 0-31,64-95
+inspur:3103891:3104079 [2] NCCL INFO Setting affinity for GPU 2 to 0-31,64-95
+inspur:3103892:3104078 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+inspur:3103889:3104077 [0] NCCL INFO Setting affinity for GPU 0 to 0-31,64-95
+inspur:3103889:3104077 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+inspur:3103890:3104080 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+inspur:3103891:3104079 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+inspur:3103890:3104080 [1] NCCL INFO comm 0xaee69a0 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+inspur:3103892:3104078 [3] NCCL INFO comm 0xa487760 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+inspur:3103891:3104079 [2] NCCL INFO comm 0xb2121b0 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+inspur:3103889:3104077 [0] NCCL INFO comm 0xa248320 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+inspur:3103892:3104078 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2 [16] -1/-1/-1->3->2 [17] -1/-1/-1->3->2 [18] -1/-1/-1->3->2 [19] -1/-1/-1->3->2 [20] -1/-1/-1->3->2 [21] -1/-1/-1->3->2 [22] -1/-1/-1->3->2 [23] -1/-1/-1->3->2
+inspur:3103892:3104078 [3] NCCL INFO P2P Chunksize set to 524288
+inspur:3103889:3104077 [0] NCCL INFO Channel 00/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 01/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 02/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 03/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 04/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 05/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 06/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 07/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 08/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 09/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 10/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 11/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 12/24 : 0 1 2 3
+inspur:3103890:3104080 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 2/-1/-1->1->0 [17] 2/-1/-1->1->0 [18] 2/-1/-1->1->0 [19] 2/-1/-1->1->0 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->0 [22] 2/-1/-1->1->0 [23] 2/-1/-1->1->0
+inspur:3103889:3104077 [0] NCCL INFO Channel 13/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 14/24 : 0 1 2 3
+inspur:3103890:3104080 [1] NCCL INFO P2P Chunksize set to 524288
+inspur:3103889:3104077 [0] NCCL INFO Channel 15/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 16/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 17/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 18/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 19/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 20/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 21/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 22/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Channel 23/24 : 0 1 2 3
+inspur:3103889:3104077 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] 1/-1/-1->0->-1 [19] 1/-1/-1->0->-1 [20] 1/-1/-1->0->-1 [21] 1/-1/-1->0->-1 [22] 1/-1/-1->0->-1 [23] 1/-1/-1->0->-1
+inspur:3103891:3104079 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1 [16] 3/-1/-1->2->1 [17] 3/-1/-1->2->1 [18] 3/-1/-1->2->1 [19] 3/-1/-1->2->1 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] 3/-1/-1->2->1 [23] 3/-1/-1->2->1
+inspur:3103889:3104077 [0] NCCL INFO P2P Chunksize set to 524288
+inspur:3103891:3104079 [2] NCCL INFO P2P Chunksize set to 524288
+inspur:3103890:3104080 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+inspur:3103891:3104079 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+inspur:3103889:3104077 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+inspur:3103889:3104077 [0] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0
+inspur:3103889:3104143 [0] NCCL INFO [Proxy Service] Device 0 CPU core 89
+inspur:3103890:3104144 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 2
+inspur:3103889:3104146 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 27
+inspur:3103891:3104145 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 75
+inspur:3103890:3104141 [1] NCCL INFO [Proxy Service] Device 1 CPU core 69
+inspur:3103891:3104142 [2] NCCL INFO [Proxy Service] Device 2 CPU core 70
+inspur:3103892:3104078 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+inspur:3103892:3104147 [3] NCCL INFO [Proxy Service] Device 3 CPU core 68
+inspur:3103892:3104148 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 76
+inspur:3103891:3104079 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+inspur:3103891:3104079 [2] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+inspur:3103892:3104078 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+inspur:3103892:3104078 [3] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+inspur:3103889:3104077 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+inspur:3103889:3104077 [0] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+inspur:3103890:3104080 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+inspur:3103890:3104080 [1] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+inspur:3103889:3104077 [0] NCCL INFO CC Off, workFifoBytes 1048576
+inspur:3103890:3104080 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+inspur:3103891:3104079 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+inspur:3103892:3104078 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+inspur:3103891:3104079 [2] NCCL INFO ncclCommInitRankConfig comm 0xb2121b0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 1f000 commId 0x51eaab8148b27a38 - Init COMPLETE
+inspur:3103890:3104080 [1] NCCL INFO ncclCommInitRankConfig comm 0xaee69a0 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId f000 commId 0x51eaab8148b27a38 - Init COMPLETE
+inspur:3103892:3104078 [3] NCCL INFO ncclCommInitRankConfig comm 0xa487760 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 20000 commId 0x51eaab8148b27a38 - Init COMPLETE
+inspur:3103891:3104079 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 0.65 (kernels 0.25, alloc 0.10, bootstrap 0.01, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.12, rest 0.06)
+inspur:3103890:3104080 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 0.65 (kernels 0.25, alloc 0.10, bootstrap 0.01, allgathers 0.01, topo 0.10, graphs 0.00, connections 0.13, rest 0.04)
+inspur:3103892:3104078 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 0.65 (kernels 0.25, alloc 0.11, bootstrap 0.00, allgathers 0.01, topo 0.10, graphs 0.00, connections 0.11, rest 0.06)
+inspur:3103889:3104077 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+inspur:3103889:3104077 [0] NCCL INFO ncclCommInitRankConfig comm 0xa248320 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId e000 commId 0x51eaab8148b27a38 - Init COMPLETE
+inspur:3103889:3104077 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 0.66 (kernels 0.28, alloc 0.09, bootstrap 0.00, allgathers 0.01, topo 0.10, graphs 0.00, connections 0.13, rest 0.04)
+inspur:3103892:3104155 [3] NCCL INFO Channel 00/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 00/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 01/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 01/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 02/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 02/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 03/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 03/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 04/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 04/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 05/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 05/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 04/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 00/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 06/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 06/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 05/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 01/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 07/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 06/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 07/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 02/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 08/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 08/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 07/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 03/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 09/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 09/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 08/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 04/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 10/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 10/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 09/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 05/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 11/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 11/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 10/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 06/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 12/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 12/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 11/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 07/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 13/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 13/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 12/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 08/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 14/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 14/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 13/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 09/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 15/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 15/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 14/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 10/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 16/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 16/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 15/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 11/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 17/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 17/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 16/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 12/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 18/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 18/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 17/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 13/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 19/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 19/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 18/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 14/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 20/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 20/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 19/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 15/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 21/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 21/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 20/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 22/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 16/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 22/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 21/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104157 [0] NCCL INFO Channel 23/0 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 17/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103892:3104155 [3] NCCL INFO Channel 23/0 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 22/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 18/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103890:3104156 [1] NCCL INFO Channel 23/0 : 1[1] -> 2[2] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 19/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 20/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 21/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 22/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Channel 23/0 : 2[2] -> 3[3] via P2P/CUMEM/read
+inspur:3103891:3104158 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+inspur:3103890:3104156 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+inspur:3103889:3104157 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+inspur:3103892:3104155 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+I20250918 17:18:12 3103889 dinov3 config.py:209] git:
+  sha: a3a8b2f1db6a2544dfc8b376fa23df459b9f7843, status: has uncommited changes, branch: main
+
+I20250918 17:18:12 3103889 dinov3 config.py:213] conda env name: dinov3
+I20250918 17:18:12 3103889 dinov3 config.py:214] conda env path: /home/deepcad/anaconda3/envs/dinov3
+I20250918 17:18:12 3103889 dinov3 config.py:215] python path: ['/home/deepcad/xzj/dinov3', '/home/deepcad/anaconda3/envs/dinov3/lib/python311.zip', '/home/deepcad/anaconda3/envs/dinov3/lib/python3.11', '/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/lib-dynload', '/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages', '/tmp/tmp1e12t5i8']
+I20250918 17:18:12 3103889 dinov3 config.py:100] benchmark_codebase: False
+config_file: dinov3/configs/train/cpjump1_vitl16.yaml
+dump_fsdp_weights: False
+eval: 
+eval_only: False
+eval_pretrained_weights: 
+multi_distillation: False
+no_resume: False
+opts: []
+output_dir: ./outputs/cpjump1_vitl16_in
+profiling: False
+record_ref_losses: False
+ref_losses_path: 
+seed: 0
+test_ibot: False
+I20250918 17:18:12 3103889 dinov3 config.py:58] MODEL:
+  META_ARCHITECTURE: SSLMetaArch
+  DEVICE: cuda
+  WEIGHTS: ''
+  DTYPE: float32
+compute_precision:
+  param_dtype: fp32
+  reduce_dtype: fp32
+  sharding_strategy: SHARD_GRAD_OP
+dino:
+  loss_weight: 1.0
+  global_ignore_diagonal: true
+  head_n_prototypes: 131072
+  head_bottleneck_dim: 512
+  head_norm_last_layer: true
+  head_nlayers: 3
+  head_hidden_dim: 8192
+  koleo_loss_weight: 0.1
+  koleo_loss_distributed: false
+  koleo_topk: 1
+  koleo_distributed_replicas: 0
+  koleo_distributed_loss_group_size: null
+  koleo_distributed_loss_group_data: true
+  force_weight_norm: false
+  reweight_dino_local_loss: false
+  local_loss_weight_schedule:
+    start: 0.5
+    peak: 0.5
+    end: 0.5
+    warmup_epochs: 0
+ibot:
+  loss_weight: 1.0
+  mask_sample_probability: 0.5
+  mask_ratio_min_max:
+  - 0.1
+  - 0.5
+  mask_random_circular_shift: false
+  force_masking_even_with_zero_weight: false
+  separate_head: true
+  head_n_prototypes: 65536
+  head_bottleneck_dim: 384
+  head_norm_last_layer: false
+  head_nlayers: 3
+  head_hidden_dim: 4096
+gram:
+  use_loss: false
+  compute_stats: false
+  loss_weight: 1.0
+  ema_teacher: false
+  ckpt: null
+  it_load_ema_teacher: -1
+  rep_update: true
+  update_frequency: 50000
+  it_first_update: 0
+  max_updates: null
+  normalized: true
+  img_level: false
+  remove_neg: false
+  remove_only_teacher_neg: false
+  tokens_used: all
+  global_teacher_resize_method: bicubic
+  global_teacher_resize_antialias: false
+  loss_weight_schedule: null
+train:
+  batch_size_per_gpu: 32
+  dataset_path: CPJump1WebDataset:root=/mnt/deepcad_nfs/CPJUMP1_dataset_dinov3/:split=train
+  data_config: null
+  output_dir: /home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in
+  saveckp_freq: 1
+  seed: 0
+  num_workers: 32
+  OFFICIAL_EPOCH_LENGTH: 1000
+  monitor_gradient_norm: false
+  chunk_schedule: []
+  use_teacher_head: true
+  learn_from_teacher_tokens: false
+  centering: sinkhorn_knopp
+  checkpointing: true
+  checkpointing_full: false
+  compile: false
+  cudagraphs: false
+  sharded_eval_checkpoint: false
+  cache_dataset: false
+student:
+  arch: vit_large
+  patch_size: 16
+  drop_path_rate: 0.2
+  layerscale: 1.0e-05
+  pretrained_weights: ''
+  ffn_layer: mlp
+  ffn_ratio: 4.0
+  resume_from_teacher_chkpt: /home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in/ckpt/13999/teacher_checkpoint.pth
+  qkv_bias: true
+  proj_bias: true
+  ffn_bias: true
+  norm_layer: layernormbf16
+  n_storage_tokens: 0
+  mask_k_bias: false
+  untie_cls_and_patch_norms: false
+  untie_global_and_local_cls_norm: false
+  in_chans: 5
+  pos_embed_type: ropenew
+  pos_embed_rope_base: 100.0
+  pos_embed_rope_min_period: null
+  pos_embed_rope_max_period: null
+  pos_embed_rope_normalize_coords: separate
+  pos_embed_rope_shift_coords: null
+  pos_embed_rope_jitter_coords: null
+  pos_embed_rope_rescale_coords: 2
+  pos_embed_rope_dtype: bf16
+  fp8_enabled: false
+  fp8_filter: blocks
+  patch_drop: 0.0
+  patch_embed_strategy: inflate
+teacher:
+  momentum_teacher: 0.992
+  final_momentum_teacher: 1
+  warmup_teacher_temp: 0.04
+  teacher_temp: 0.07
+  warmup_teacher_temp_epochs: 20
+  in_chans: 5
+distillation:
+  enabled: false
+  full_cfg_path: ''
+  checkpoint_path: ''
+multidistillation:
+  enabled: false
+hrft:
+  enabled: false
+  checkpoint_path: ''
+optim:
+  epochs: 50
+  optimizer: adamw
+  weight_decay: 0.04
+  weight_decay_end: 0.2
+  lr: 0.0001
+  warmup_epochs: 20
+  min_lr: 1.0e-06
+  schedule_trunc_extra: 0.0
+  clip_grad: 3.0
+  freeze_last_layer_epochs: 1
+  scaling_rule: sqrt_wrt_1024
+  patch_embed_lr_mult: 0.25
+  dino_head_wd_multiplier: 1.0
+  layerwise_decay: 0.95
+  multi_tensor_optim: true
+  dump_fsdp_weights_path: ''
+  adamw_beta1: 0.9
+  adamw_beta2: 0.999
+crops:
+  global_crops_scale:
+  - 0.3
+  - 1.0
+  local_crops_number: 4
+  local_crops_scale:
+  - 0.05
+  - 0.3
+  global_crops_size: 256
+  local_crops_size: 112
+  global_local_crop_pairs_ratios: 1.0
+  gram_teacher_crops_size: null
+  localcrops_subset_of_globalcrops: false
+  share_color_jitter: false
+  horizontal_flips: true
+  gram_teacher_no_distortions: false
+  rgb_mean:
+  - 2302.585357163912
+  - 2262.1018075014476
+  - 4284.0141763303445
+  - 2382.809901063049
+  - 1496.6019960251908
+  rgb_std:
+  - 2389.2512721729604
+  - 2974.1991759111643
+  - 6384.339457351192
+  - 3640.1488634424036
+  - 3056.291301930611
+  microscopy: true
+  use_dynamic_stats: false
+evaluation:
+  eval_period_iterations: 12500
+  low_freq_every: 5
+  config_files:
+    high_freq: benchmark_high_frequency.yaml
+    low_freq: benchmark_low_frequency.yaml
+checkpointing:
+  period: 2000
+  max_to_keep: 10
+  keep_every: 99999999999999999
+
+I20250918 17:18:12 3103889 dinov3 config.py:53] sqrt scaling learning rate; old: 0.0001, new: 0.0001414213562373095
+I20250918 17:18:12 3103889 dinov3 train.py:609] {'MODEL': {'META_ARCHITECTURE': 'SSLMetaArch', 'DEVICE': 'cuda', 'WEIGHTS': '', 'DTYPE': 'float32'}, 'compute_precision': {'param_dtype': 'fp32', 'reduce_dtype': 'fp32', 'sharding_strategy': 'SHARD_GRAD_OP'}, 'dino': {'loss_weight': 1.0, 'global_ignore_diagonal': True, 'head_n_prototypes': 131072, 'head_bottleneck_dim': 512, 'head_norm_last_layer': True, 'head_nlayers': 3, 'head_hidden_dim': 8192, 'koleo_loss_weight': 0.1, 'koleo_loss_distributed': False, 'koleo_topk': 1, 'koleo_distributed_replicas': 0, 'koleo_distributed_loss_group_size': None, 'koleo_distributed_loss_group_data': True, 'force_weight_norm': False, 'reweight_dino_local_loss': False, 'local_loss_weight_schedule': {'start': 0.5, 'peak': 0.5, 'end': 0.5, 'warmup_epochs': 0}}, 'ibot': {'loss_weight': 1.0, 'mask_sample_probability': 0.5, 'mask_ratio_min_max': [0.1, 0.5], 'mask_random_circular_shift': False, 'force_masking_even_with_zero_weight': False, 'separate_head': True, 'head_n_prototypes': 65536, 'head_bottleneck_dim': 384, 'head_norm_last_layer': False, 'head_nlayers': 3, 'head_hidden_dim': 4096}, 'gram': {'use_loss': False, 'compute_stats': False, 'loss_weight': 1.0, 'ema_teacher': False, 'ckpt': None, 'it_load_ema_teacher': -1, 'rep_update': True, 'update_frequency': 50000, 'it_first_update': 0, 'max_updates': None, 'normalized': True, 'img_level': False, 'remove_neg': False, 'remove_only_teacher_neg': False, 'tokens_used': 'all', 'global_teacher_resize_method': 'bicubic', 'global_teacher_resize_antialias': False, 'loss_weight_schedule': None}, 'train': {'batch_size_per_gpu': 32, 'dataset_path': 'CPJump1WebDataset:root=/mnt/deepcad_nfs/CPJUMP1_dataset_dinov3/:split=train', 'data_config': None, 'output_dir': '/home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in', 'saveckp_freq': 1, 'seed': 0, 'num_workers': 32, 'OFFICIAL_EPOCH_LENGTH': 1000, 'monitor_gradient_norm': False, 'chunk_schedule': [], 'use_teacher_head': True, 'learn_from_teacher_tokens': False, 'centering': 'sinkhorn_knopp', 'checkpointing': True, 'checkpointing_full': False, 'compile': False, 'cudagraphs': False, 'sharded_eval_checkpoint': False, 'cache_dataset': False}, 'student': {'arch': 'vit_large', 'patch_size': 16, 'drop_path_rate': 0.2, 'layerscale': 1e-05, 'pretrained_weights': '', 'ffn_layer': 'mlp', 'ffn_ratio': 4.0, 'resume_from_teacher_chkpt': '/home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in/ckpt/13999/teacher_checkpoint.pth', 'qkv_bias': True, 'proj_bias': True, 'ffn_bias': True, 'norm_layer': 'layernormbf16', 'n_storage_tokens': 0, 'mask_k_bias': False, 'untie_cls_and_patch_norms': False, 'untie_global_and_local_cls_norm': False, 'in_chans': 5, 'pos_embed_type': 'ropenew', 'pos_embed_rope_base': 100.0, 'pos_embed_rope_min_period': None, 'pos_embed_rope_max_period': None, 'pos_embed_rope_normalize_coords': 'separate', 'pos_embed_rope_shift_coords': None, 'pos_embed_rope_jitter_coords': None, 'pos_embed_rope_rescale_coords': 2, 'pos_embed_rope_dtype': 'bf16', 'fp8_enabled': False, 'fp8_filter': 'blocks', 'patch_drop': 0.0, 'patch_embed_strategy': 'inflate'}, 'teacher': {'momentum_teacher': 0.992, 'final_momentum_teacher': 1, 'warmup_teacher_temp': 0.04, 'teacher_temp': 0.07, 'warmup_teacher_temp_epochs': 20, 'in_chans': 5}, 'distillation': {'enabled': False, 'full_cfg_path': '', 'checkpoint_path': ''}, 'multidistillation': {'enabled': False}, 'hrft': {'enabled': False, 'checkpoint_path': ''}, 'optim': {'epochs': 50, 'optimizer': 'adamw', 'weight_decay': 0.04, 'weight_decay_end': 0.2, 'lr': 0.0001414213562373095, 'warmup_epochs': 20, 'min_lr': 1e-06, 'schedule_trunc_extra': 0.0, 'clip_grad': 3.0, 'freeze_last_layer_epochs': 1, 'scaling_rule': 'sqrt_wrt_1024', 'patch_embed_lr_mult': 0.25, 'dino_head_wd_multiplier': 1.0, 'layerwise_decay': 0.95, 'multi_tensor_optim': True, 'dump_fsdp_weights_path': '', 'adamw_beta1': 0.9, 'adamw_beta2': 0.999}, 'crops': {'global_crops_scale': [0.3, 1.0], 'local_crops_number': 4, 'local_crops_scale': [0.05, 0.3], 'global_crops_size': 256, 'local_crops_size': 112, 'global_local_crop_pairs_ratios': 1.0, 'gram_teacher_crops_size': None, 'localcrops_subset_of_globalcrops': False, 'share_color_jitter': False, 'horizontal_flips': True, 'gram_teacher_no_distortions': False, 'rgb_mean': [2302.585357163912, 2262.1018075014476, 4284.0141763303445, 2382.809901063049, 1496.6019960251908], 'rgb_std': [2389.2512721729604, 2974.1991759111643, 6384.339457351192, 3640.1488634424036, 3056.291301930611], 'microscopy': True, 'use_dynamic_stats': False}, 'evaluation': {'eval_period_iterations': 12500, 'low_freq_every': 5, 'config_files': {'high_freq': 'benchmark_high_frequency.yaml', 'low_freq': 'benchmark_low_frequency.yaml'}}, 'checkpointing': {'period': 2000, 'max_to_keep': 10, 'keep_every': 99999999999999999}}
+D20250918 17:18:12 3103889 nan_logger __init__.py:132] PyTorch distributed environment: TorchElastic job (f251c8a8-e29b-42f5-a4bd-9a54a1d72e10) using inspur:39179 (rank=0, world size=4)
+I20250918 17:18:12 3103889 dinov3 train.py:620] Making meta arch SSLMetaArch
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:119] using base=100.0 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:120] using min_period=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:121] using max_period=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:122] using normalize_coords=separate for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:123] using shift_coords=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:124] using rescale_coords=2 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:125] using jitter_coords=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:126] using dtype=bf16 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:140] using mlp layer as FFN
+I20250918 17:18:12 3103889 dinov3 __init__.py:23] fp8 matmuls: OFF (disabled in config)
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:119] using base=100.0 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:120] using min_period=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:121] using max_period=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:122] using normalize_coords=separate for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:123] using shift_coords=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:124] using rescale_coords=2 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:125] using jitter_coords=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:126] using dtype=bf16 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:140] using mlp layer as FFN
+I20250918 17:18:12 3103889 dinov3 __init__.py:23] fp8 matmuls: OFF (disabled in config)
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:119] using base=100.0 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:120] using min_period=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:121] using max_period=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:122] using normalize_coords=separate for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:123] using shift_coords=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:124] using rescale_coords=2 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:125] using jitter_coords=None for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:126] using dtype=bf16 for rope new
+I20250918 17:18:12 3103889 dinov3 vision_transformer.py:140] using mlp layer as FFN
+I20250918 17:18:12 3103889 dinov3 __init__.py:23] fp8 matmuls: OFF (disabled in config)
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:57] Number of parameters: 303674368
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:61] OPTIONS -- architecture : embed_dim: 1024
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:66] OPTIONS -- DINO
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:67] OPTIONS -- DINO -- loss_weight: 1.0
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:68] OPTIONS -- DINO -- global_ignore_diagonal: True
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:69] OPTIONS -- DINO -- head_n_prototypes: 131072
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:70] OPTIONS -- DINO -- head_bottleneck_dim: 512
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:71] OPTIONS -- DINO -- head_hidden_dim: 8192
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:72] OPTIONS -- DINO -- head_norm_last_layer: True
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:85] OPTIONS -- KOLEO
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:86] OPTIONS -- KOLEO -- loss_weight: 0.1
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:87] OPTIONS -- KOLEO -- distributed: False
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:104] OPTIONS -- IBOT
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:105] OPTIONS -- IBOT -- loss_weight: 1.0
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:106] OPTIONS -- IBOT masking -- ibot_mask_ratio_tuple: [0.1, 0.5]
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:107] OPTIONS -- IBOT masking -- ibot_mask_sample_probability: 0.5
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:113] OPTIONS -- IBOT -- head_n_prototypes: 65536
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:114] OPTIONS -- IBOT -- head_bottleneck_dim: 384
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:115] OPTIONS -- IBOT -- head_hidden_dim: 4096
+I20250918 17:18:12 3103889 dinov3 ssl_meta_arch.py:116] OPTIONS -- IBOT -- head_norm_last_layer: False
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:133] Student and Teacher are built: they are both vit_large network.
+I20250918 17:18:14 3103889 dinov3 ac_compile_parallelize.py:52] DISTRIBUTED FSDP -- preparing model for distributed training
+I20250918 17:18:14 3103889 dinov3 ac_compile_parallelize.py:79] using selective checkpointing on backbone with selective policy
+I20250918 17:18:14 3103889 dinov3 train.py:634] Model after distributed:
+SSLMetaArch(
+  (dino_loss): DINOLoss()
+  (koleo_loss): KoLeoLoss(
+    (pdist): PairwiseDistance()
+  )
+  (ibot_patch_loss): iBOTPatchLoss(
+    (sinkhorn_knopp_teacher): SinkhornKnoppTeacher()
+  )
+  (student): ModuleDict(
+    (backbone): FSDPDinoVisionTransformer(
+      (patch_embed): PatchEmbed(
+        (proj): Conv2d(5, 1024, kernel_size=(16, 16), stride=(16, 16))
+        (norm): Identity()
+      )
+      (rope_embed): RopePositionEmbedding()
+      (blocks): ModuleList(
+        (0-23): 24 x FSDPCheckpointWrapper(
+          (_checkpoint_wrapped_module): SelfAttentionBlock(
+            (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+            (attn): SelfAttention(
+              (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+              (attn_drop): Dropout(p=0.0, inplace=False)
+              (proj): Linear(in_features=1024, out_features=1024, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (ls1): LayerScale()
+            (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+            (mlp): Mlp(
+              (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+            (ls2): LayerScale()
+          )
+        )
+      )
+      (norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      (head): Identity()
+    )
+    (dino_head): FSDPDINOHead(
+      (mlp): Sequential(
+        (0): Linear(in_features=1024, out_features=8192, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=8192, out_features=8192, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=8192, out_features=512, bias=True)
+      )
+      (last_layer): Linear(in_features=512, out_features=131072, bias=False)
+    )
+    (ibot_head): FSDPDINOHead(
+      (mlp): Sequential(
+        (0): Linear(in_features=1024, out_features=4096, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=4096, out_features=4096, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=4096, out_features=384, bias=True)
+      )
+      (last_layer): Linear(in_features=384, out_features=65536, bias=False)
+    )
+  )
+  (teacher): ModuleDict(
+    (backbone): FSDPDinoVisionTransformer(
+      (patch_embed): PatchEmbed(
+        (proj): Conv2d(5, 1024, kernel_size=(16, 16), stride=(16, 16))
+        (norm): Identity()
+      )
+      (rope_embed): RopePositionEmbedding()
+      (blocks): ModuleList(
+        (0-23): 24 x FSDPSelfAttentionBlock(
+          (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+          (attn): SelfAttention(
+            (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=1024, out_features=1024, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (ls1): LayerScale()
+          (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+            (act): GELU(approximate='none')
+            (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+            (drop): Dropout(p=0.0, inplace=False)
+          )
+          (ls2): LayerScale()
+        )
+      )
+      (norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      (head): Identity()
+    )
+    (dino_head): FSDPDINOHead(
+      (mlp): Sequential(
+        (0): Linear(in_features=1024, out_features=8192, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=8192, out_features=8192, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=8192, out_features=512, bias=True)
+      )
+      (last_layer): Linear(in_features=512, out_features=131072, bias=False)
+    )
+    (ibot_head): FSDPDINOHead(
+      (mlp): Sequential(
+        (0): Linear(in_features=1024, out_features=4096, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=4096, out_features=4096, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=4096, out_features=384, bias=True)
+      )
+      (last_layer): Linear(in_features=384, out_features=65536, bias=False)
+    )
+  )
+  (model_ema): ModuleDict(
+    (backbone): FSDPDinoVisionTransformer(
+      (patch_embed): PatchEmbed(
+        (proj): Conv2d(5, 1024, kernel_size=(16, 16), stride=(16, 16))
+        (norm): Identity()
+      )
+      (rope_embed): RopePositionEmbedding()
+      (blocks): ModuleList(
+        (0-23): 24 x FSDPSelfAttentionBlock(
+          (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+          (attn): SelfAttention(
+            (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=False)
+            (proj): Linear(in_features=1024, out_features=1024, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=False)
+          )
+          (ls1): LayerScale()
+          (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+            (act): GELU(approximate='none')
+            (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+            (drop): Dropout(p=0.0, inplace=False)
+          )
+          (ls2): LayerScale()
+        )
+      )
+      (norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      (head): Identity()
+    )
+    (dino_head): FSDPDINOHead(
+      (mlp): Sequential(
+        (0): Linear(in_features=1024, out_features=8192, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=8192, out_features=8192, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=8192, out_features=512, bias=True)
+      )
+      (last_layer): Linear(in_features=512, out_features=131072, bias=False)
+    )
+    (ibot_head): FSDPDINOHead(
+      (mlp): Sequential(
+        (0): Linear(in_features=1024, out_features=4096, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=4096, out_features=4096, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=4096, out_features=384, bias=True)
+      )
+      (last_layer): Linear(in_features=384, out_features=65536, bias=False)
+    )
+  )
+)
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:783] Getting paramer groups for backbone
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] cls_token: lr_multiplier: 0.27738957312183377, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mask_token: lr_multiplier: 0.27738957312183377, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] patch_embed.proj.weight: lr_multiplier: 0.06934739328045844, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] patch_embed.proj.bias: lr_multiplier: 0.06934739328045844, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.norm1.weight: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.norm1.bias: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.attn.qkv.weight: lr_multiplier: 0.2919890243387724, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.attn.qkv.bias: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.attn.proj.weight: lr_multiplier: 0.2919890243387724, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.attn.proj.bias: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.ls1.gamma: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.norm2.weight: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.norm2.bias: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.mlp.fc1.weight: lr_multiplier: 0.2919890243387724, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.mlp.fc1.bias: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.mlp.fc2.weight: lr_multiplier: 0.2919890243387724, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.mlp.fc2.bias: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.0.ls2.gamma: lr_multiplier: 0.2919890243387724, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.norm1.weight: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.norm1.bias: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.attn.qkv.weight: lr_multiplier: 0.3073568677250236, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.attn.qkv.bias: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.attn.proj.weight: lr_multiplier: 0.3073568677250236, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.attn.proj.bias: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.ls1.gamma: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.norm2.weight: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.norm2.bias: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.mlp.fc1.weight: lr_multiplier: 0.3073568677250236, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.mlp.fc1.bias: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.mlp.fc2.weight: lr_multiplier: 0.3073568677250236, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.mlp.fc2.bias: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.1.ls2.gamma: lr_multiplier: 0.3073568677250236, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.norm1.weight: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.norm1.bias: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.attn.qkv.weight: lr_multiplier: 0.323533544973709, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.attn.qkv.bias: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.attn.proj.weight: lr_multiplier: 0.323533544973709, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.attn.proj.bias: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.ls1.gamma: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.norm2.weight: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.norm2.bias: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.mlp.fc1.weight: lr_multiplier: 0.323533544973709, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.mlp.fc1.bias: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.mlp.fc2.weight: lr_multiplier: 0.323533544973709, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.mlp.fc2.bias: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.2.ls2.gamma: lr_multiplier: 0.323533544973709, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.norm1.weight: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.norm1.bias: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.attn.qkv.weight: lr_multiplier: 0.3405616262881148, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.attn.qkv.bias: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.attn.proj.weight: lr_multiplier: 0.3405616262881148, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.attn.proj.bias: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.ls1.gamma: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.norm2.weight: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.norm2.bias: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.mlp.fc1.weight: lr_multiplier: 0.3405616262881148, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.mlp.fc1.bias: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.mlp.fc2.weight: lr_multiplier: 0.3405616262881148, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.mlp.fc2.bias: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.3.ls2.gamma: lr_multiplier: 0.3405616262881148, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.norm1.weight: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.norm1.bias: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.attn.qkv.weight: lr_multiplier: 0.3584859224085419, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.attn.qkv.bias: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.attn.proj.weight: lr_multiplier: 0.3584859224085419, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.attn.proj.bias: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.ls1.gamma: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.norm2.weight: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.norm2.bias: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.mlp.fc1.weight: lr_multiplier: 0.3584859224085419, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.mlp.fc1.bias: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.mlp.fc2.weight: lr_multiplier: 0.3584859224085419, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.mlp.fc2.bias: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.4.ls2.gamma: lr_multiplier: 0.3584859224085419, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.norm1.weight: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.norm1.bias: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.attn.qkv.weight: lr_multiplier: 0.37735360253530725, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.attn.qkv.bias: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.attn.proj.weight: lr_multiplier: 0.37735360253530725, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.attn.proj.bias: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.ls1.gamma: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.norm2.weight: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.norm2.bias: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.mlp.fc1.weight: lr_multiplier: 0.37735360253530725, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.mlp.fc1.bias: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.mlp.fc2.weight: lr_multiplier: 0.37735360253530725, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.mlp.fc2.bias: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.5.ls2.gamma: lr_multiplier: 0.37735360253530725, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.norm1.weight: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.norm1.bias: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.attn.qkv.weight: lr_multiplier: 0.3972143184582182, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.attn.qkv.bias: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.attn.proj.weight: lr_multiplier: 0.3972143184582182, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.attn.proj.bias: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.ls1.gamma: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.norm2.weight: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.norm2.bias: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.mlp.fc1.weight: lr_multiplier: 0.3972143184582182, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.mlp.fc1.bias: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.mlp.fc2.weight: lr_multiplier: 0.3972143184582182, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.mlp.fc2.bias: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.6.ls2.gamma: lr_multiplier: 0.3972143184582182, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.norm1.weight: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.norm1.bias: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.attn.qkv.weight: lr_multiplier: 0.4181203352191771, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.attn.qkv.bias: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.attn.proj.weight: lr_multiplier: 0.4181203352191771, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.attn.proj.bias: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.ls1.gamma: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.norm2.weight: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.norm2.bias: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.mlp.fc1.weight: lr_multiplier: 0.4181203352191771, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.mlp.fc1.bias: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.mlp.fc2.weight: lr_multiplier: 0.4181203352191771, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.mlp.fc2.bias: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.7.ls2.gamma: lr_multiplier: 0.4181203352191771, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.norm1.weight: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.norm1.bias: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.attn.qkv.weight: lr_multiplier: 0.44012666865176536, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.attn.qkv.bias: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.attn.proj.weight: lr_multiplier: 0.44012666865176536, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.attn.proj.bias: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.ls1.gamma: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.norm2.weight: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.norm2.bias: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.mlp.fc1.weight: lr_multiplier: 0.44012666865176536, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.mlp.fc1.bias: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.mlp.fc2.weight: lr_multiplier: 0.44012666865176536, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.mlp.fc2.bias: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.8.ls2.gamma: lr_multiplier: 0.44012666865176536, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.norm1.weight: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.norm1.bias: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.attn.qkv.weight: lr_multiplier: 0.46329123015975304, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.attn.qkv.bias: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.attn.proj.weight: lr_multiplier: 0.46329123015975304, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.attn.proj.bias: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.ls1.gamma: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.norm2.weight: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.norm2.bias: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.mlp.fc1.weight: lr_multiplier: 0.46329123015975304, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.mlp.fc1.bias: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.mlp.fc2.weight: lr_multiplier: 0.46329123015975304, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.mlp.fc2.bias: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.9.ls2.gamma: lr_multiplier: 0.46329123015975304, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.norm1.weight: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.norm1.bias: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.attn.qkv.weight: lr_multiplier: 0.48767497911552954, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.attn.qkv.bias: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.attn.proj.weight: lr_multiplier: 0.48767497911552954, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.attn.proj.bias: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.ls1.gamma: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.norm2.weight: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.norm2.bias: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.mlp.fc1.weight: lr_multiplier: 0.48767497911552954, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.mlp.fc1.bias: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.mlp.fc2.weight: lr_multiplier: 0.48767497911552954, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.mlp.fc2.bias: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.10.ls2.gamma: lr_multiplier: 0.48767497911552954, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.norm1.weight: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.norm1.bias: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.attn.qkv.weight: lr_multiplier: 0.5133420832795048, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.attn.qkv.bias: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.attn.proj.weight: lr_multiplier: 0.5133420832795048, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.attn.proj.bias: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.ls1.gamma: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.norm2.weight: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.norm2.bias: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.mlp.fc1.weight: lr_multiplier: 0.5133420832795048, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.mlp.fc1.bias: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.mlp.fc2.weight: lr_multiplier: 0.5133420832795048, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.mlp.fc2.bias: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.11.ls2.gamma: lr_multiplier: 0.5133420832795048, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.norm1.weight: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.norm1.bias: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.attn.qkv.weight: lr_multiplier: 0.5403600876626367, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.attn.qkv.bias: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.attn.proj.weight: lr_multiplier: 0.5403600876626367, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.attn.proj.bias: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.ls1.gamma: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.norm2.weight: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.norm2.bias: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.mlp.fc1.weight: lr_multiplier: 0.5403600876626367, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.mlp.fc1.bias: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.mlp.fc2.weight: lr_multiplier: 0.5403600876626367, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.mlp.fc2.bias: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.12.ls2.gamma: lr_multiplier: 0.5403600876626367, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.norm1.weight: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.norm1.bias: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.attn.qkv.weight: lr_multiplier: 0.5688000922764597, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.attn.qkv.bias: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.attn.proj.weight: lr_multiplier: 0.5688000922764597, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.attn.proj.bias: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.ls1.gamma: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.norm2.weight: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.norm2.bias: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.mlp.fc1.weight: lr_multiplier: 0.5688000922764597, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.mlp.fc1.bias: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.mlp.fc2.weight: lr_multiplier: 0.5688000922764597, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.mlp.fc2.bias: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.13.ls2.gamma: lr_multiplier: 0.5688000922764597, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.norm1.weight: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.norm1.bias: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.attn.qkv.weight: lr_multiplier: 0.5987369392383787, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.attn.qkv.bias: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.attn.proj.weight: lr_multiplier: 0.5987369392383787, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.attn.proj.bias: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.ls1.gamma: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.norm2.weight: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.norm2.bias: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.mlp.fc1.weight: lr_multiplier: 0.5987369392383787, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.mlp.fc1.bias: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.mlp.fc2.weight: lr_multiplier: 0.5987369392383787, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.mlp.fc2.bias: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.14.ls2.gamma: lr_multiplier: 0.5987369392383787, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.norm1.weight: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.norm1.bias: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.attn.qkv.weight: lr_multiplier: 0.6302494097246091, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.attn.qkv.bias: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.attn.proj.weight: lr_multiplier: 0.6302494097246091, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.attn.proj.bias: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.ls1.gamma: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.norm2.weight: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.norm2.bias: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.mlp.fc1.weight: lr_multiplier: 0.6302494097246091, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.mlp.fc1.bias: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.mlp.fc2.weight: lr_multiplier: 0.6302494097246091, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.mlp.fc2.bias: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.15.ls2.gamma: lr_multiplier: 0.6302494097246091, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.norm1.weight: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.norm1.bias: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.attn.qkv.weight: lr_multiplier: 0.6634204312890623, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.attn.qkv.bias: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.attn.proj.weight: lr_multiplier: 0.6634204312890623, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.attn.proj.bias: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.ls1.gamma: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.norm2.weight: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.norm2.bias: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.mlp.fc1.weight: lr_multiplier: 0.6634204312890623, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.mlp.fc1.bias: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.mlp.fc2.weight: lr_multiplier: 0.6634204312890623, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.mlp.fc2.bias: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.16.ls2.gamma: lr_multiplier: 0.6634204312890623, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.norm1.weight: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.norm1.bias: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.attn.qkv.weight: lr_multiplier: 0.6983372960937497, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.attn.qkv.bias: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.attn.proj.weight: lr_multiplier: 0.6983372960937497, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.attn.proj.bias: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.ls1.gamma: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.norm2.weight: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.norm2.bias: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.mlp.fc1.weight: lr_multiplier: 0.6983372960937497, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.mlp.fc1.bias: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.mlp.fc2.weight: lr_multiplier: 0.6983372960937497, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.mlp.fc2.bias: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.17.ls2.gamma: lr_multiplier: 0.6983372960937497, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.norm1.weight: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.norm1.bias: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.attn.qkv.weight: lr_multiplier: 0.7350918906249998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.attn.qkv.bias: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.attn.proj.weight: lr_multiplier: 0.7350918906249998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.attn.proj.bias: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.ls1.gamma: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.norm2.weight: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.norm2.bias: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.mlp.fc1.weight: lr_multiplier: 0.7350918906249998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.mlp.fc1.bias: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.mlp.fc2.weight: lr_multiplier: 0.7350918906249998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.mlp.fc2.bias: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.18.ls2.gamma: lr_multiplier: 0.7350918906249998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.norm1.weight: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.norm1.bias: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.attn.qkv.weight: lr_multiplier: 0.7737809374999998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.attn.qkv.bias: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.attn.proj.weight: lr_multiplier: 0.7737809374999998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.attn.proj.bias: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.ls1.gamma: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.norm2.weight: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.norm2.bias: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.mlp.fc1.weight: lr_multiplier: 0.7737809374999998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.mlp.fc1.bias: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.mlp.fc2.weight: lr_multiplier: 0.7737809374999998, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.mlp.fc2.bias: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.19.ls2.gamma: lr_multiplier: 0.7737809374999998, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.norm1.weight: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.norm1.bias: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.attn.qkv.weight: lr_multiplier: 0.8145062499999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.attn.qkv.bias: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.attn.proj.weight: lr_multiplier: 0.8145062499999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.attn.proj.bias: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.ls1.gamma: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.norm2.weight: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.norm2.bias: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.mlp.fc1.weight: lr_multiplier: 0.8145062499999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.mlp.fc1.bias: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.mlp.fc2.weight: lr_multiplier: 0.8145062499999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.mlp.fc2.bias: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.20.ls2.gamma: lr_multiplier: 0.8145062499999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.norm1.weight: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.norm1.bias: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.attn.qkv.weight: lr_multiplier: 0.8573749999999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.attn.qkv.bias: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.attn.proj.weight: lr_multiplier: 0.8573749999999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.attn.proj.bias: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.ls1.gamma: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.norm2.weight: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.norm2.bias: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.mlp.fc1.weight: lr_multiplier: 0.8573749999999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.mlp.fc1.bias: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.mlp.fc2.weight: lr_multiplier: 0.8573749999999999, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.mlp.fc2.bias: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.21.ls2.gamma: lr_multiplier: 0.8573749999999999, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.norm1.weight: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.norm1.bias: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.attn.qkv.weight: lr_multiplier: 0.9025, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.attn.qkv.bias: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.attn.proj.weight: lr_multiplier: 0.9025, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.attn.proj.bias: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.ls1.gamma: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.norm2.weight: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.norm2.bias: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.mlp.fc1.weight: lr_multiplier: 0.9025, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.mlp.fc1.bias: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.mlp.fc2.weight: lr_multiplier: 0.9025, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.mlp.fc2.bias: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.22.ls2.gamma: lr_multiplier: 0.9025, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.norm1.weight: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.norm1.bias: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.attn.qkv.weight: lr_multiplier: 0.95, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.attn.qkv.bias: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.attn.proj.weight: lr_multiplier: 0.95, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.attn.proj.bias: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.ls1.gamma: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.norm2.weight: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.norm2.bias: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.mlp.fc1.weight: lr_multiplier: 0.95, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.mlp.fc1.bias: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.mlp.fc2.weight: lr_multiplier: 0.95, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.mlp.fc2.bias: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] blocks.23.ls2.gamma: lr_multiplier: 0.95, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] norm.weight: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] norm.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:771] fusing param groups
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:783] Getting paramer groups for dino_head
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.0.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.0.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.2.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.2.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.4.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.4.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] last_layer.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:771] fusing param groups
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:783] Getting paramer groups for ibot_head
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.0.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.0.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.2.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.2.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.4.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] mlp.4.bias: lr_multiplier: 1.0, wd_multiplier: 0.0
+I20250918 17:18:14 3103889 dinov3 param_groups.py:168] last_layer.weight: lr_multiplier: 1.0, wd_multiplier: 1.0
+I20250918 17:18:14 3103889 dinov3 ssl_meta_arch.py:771] fusing param groups
+I20250918 17:18:14 3103889 dinov3 train.py:145] Schedulers ready.
+I20250918 17:18:15 3103889 dinov3 ssl_meta_arch.py:326] Loading pretrained weights from /home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in/ckpt/13999/teacher_checkpoint.pth
+I20250918 17:18:15 3103889 dinov3 checkpointer.py:276] Loading pretrained weights from /home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in/ckpt/13999/teacher_checkpoint.pth
+I20250918 17:18:17 3103889 dinov3 train.py:405] Checkpoint found /home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in/ckpt/13999
+inspur:3103892:3104735 [3] NCCL INFO Channel 00/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 00/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 00/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 01/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 01/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 01/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 02/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 02/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 02/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 03/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 03/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 03/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 04/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 04/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 04/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 05/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 05/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 05/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 06/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 06/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 06/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 07/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 07/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 07/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 08/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 09/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 08/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 10/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 09/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 11/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 10/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 12/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 08/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 11/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 13/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 12/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 09/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 14/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 10/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 15/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 11/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 16/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 12/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 13/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 17/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 14/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 18/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 13/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 15/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 19/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 14/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 16/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 20/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 17/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 15/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 21/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 18/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 16/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 22/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 19/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 23/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 17/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 20/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 24/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 18/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 21/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 25/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 19/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 22/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 26/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 20/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 23/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 27/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 24/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 21/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 28/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 22/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 25/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 29/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 26/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 30/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 27/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 28/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103890:3104739 [1] NCCL INFO Channel 31/1 : 1[1] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 23/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 29/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 24/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 30/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 25/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103892:3104735 [3] NCCL INFO Channel 31/1 : 3[3] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 26/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 27/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 28/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 29/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 30/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103891:3104736 [2] NCCL INFO Channel 31/1 : 2[2] -> 0[0] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 00/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 01/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 02/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 03/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 04/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 05/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 06/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 07/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 08/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 09/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 10/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 11/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 12/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 13/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 14/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 15/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 16/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 17/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 18/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 19/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 20/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 21/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 22/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 23/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 24/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 25/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 26/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 27/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 28/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 29/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 30/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 31/1 : 0[0] -> 1[1] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 00/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 01/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 02/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 03/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 04/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 05/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 06/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 07/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 08/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 09/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 10/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 11/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 12/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 13/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 14/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 15/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 16/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 17/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 18/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 19/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 20/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 21/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 22/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 23/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 24/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 25/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 26/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 27/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 28/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 29/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 30/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 31/1 : 0[0] -> 2[2] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 00/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 01/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 02/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 03/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 04/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 05/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 06/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 07/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 08/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 09/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 10/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 11/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 12/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 13/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 14/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 15/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 16/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 17/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 18/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 19/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 20/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 21/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 22/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 23/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 24/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 25/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 26/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 27/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 28/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 29/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 30/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+inspur:3103889:3104767 [0] NCCL INFO Channel 31/1 : 0[0] -> 3[3] via P2P/CUMEM/read
+I20250918 17:18:28 3103889 dinov3 checkpointer.py:165] Loaded: /home/deepcad/xzj/dinov3/outputs/cpjump1_vitl16_in/ckpt/13999
+I20250918 17:18:28 3103889 dinov3 augmentations.py:59] ###################################
+I20250918 17:18:28 3103889 dinov3 augmentations.py:60] Using data augmentation parameters:
+I20250918 17:18:28 3103889 dinov3 augmentations.py:61] global_crops_scale: [0.3, 1.0]
+I20250918 17:18:28 3103889 dinov3 augmentations.py:62] local_crops_scale: [0.05, 0.3]
+I20250918 17:18:28 3103889 dinov3 augmentations.py:63] local_crops_number: 4
+I20250918 17:18:28 3103889 dinov3 augmentations.py:64] global_crops_size: 256
+I20250918 17:18:28 3103889 dinov3 augmentations.py:65] local_crops_size: 112
+I20250918 17:18:28 3103889 dinov3 augmentations.py:66] gram_crops_size: None
+I20250918 17:18:28 3103889 dinov3 augmentations.py:67] gram_teacher_no_distortions: False
+I20250918 17:18:28 3103889 dinov3 augmentations.py:68] teacher_no_color_jitter: False
+I20250918 17:18:28 3103889 dinov3 augmentations.py:69] local_crops_subset_of_global_crops: False
+I20250918 17:18:28 3103889 dinov3 augmentations.py:70] patch_size if local_crops_subset_of_global_crops: 16
+I20250918 17:18:28 3103889 dinov3 augmentations.py:71] share_color_jitter: False
+I20250918 17:18:28 3103889 dinov3 augmentations.py:72] horizontal flips: True
+I20250918 17:18:28 3103889 dinov3 augmentations.py:73] ###################################
+I20250918 17:18:28 3103889 dinov3 loaders.py:98] using dataset: "CPJump1WebDataset:root=/mnt/deepcad_nfs/CPJUMP1_dataset_dinov3/:split=train"
+I20250918 17:18:28 3103889 dinov3 loaders.py:106] dataset has no length (IterableDataset)
+I20250918 17:18:28 3103889 dinov3 loaders.py:129] dataset is IterableDataset; no sampler will be used
+I20250918 17:18:28 3103889 dinov3 loaders.py:226] using PyTorch data loader
+I20250918 17:18:28 3103889 dinov3 loaders.py:242] infinite data loader
+I20250918 17:18:28 3103889 dinov3 train.py:431] Starting training from iteration 14000
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank2]:   File "<frozen runpy>", line 88, in _run_code
+[rank2]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 648, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 644, in main
+[rank2]:     do_train(cfg, model, resume=not args.no_resume)
+[rank2]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 454, in do_train
+[rank2]:     for data in metric_logger.log_every(
+[rank2]:   File "/home/deepcad/xzj/dinov3/dinov3/logging/helpers.py", line 93, in log_every
+[rank2]:     for obj in iterable:
+[rank2]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 734, in __next__
+[rank2]:     data = self._next_data()
+[rank2]:            ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1516, in _next_data
+[rank2]:     return self._process_data(data, worker_id)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1551, in _process_data
+[rank2]:     data.reraise()
+[rank2]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/_utils.py", line 769, in reraise
+[rank2]:     raise exception
+[rank2]: AttributeError: Caught AttributeError in DataLoader worker process 0.
+[rank2]: Original Traceback (most recent call last):
+[rank2]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank2]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank2]:     data.append(next(self.dataset_iter))
+[rank2]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 102, in __iter__
+[rank2]:     for img, per_mean, per_std in self._iter_samples():
+[rank2]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 66, in _iter_samples
+[rank2]:     .nodesplitter(wds.split_by_node)
+[rank2]:      ^^^^^^^^^^^^
+[rank2]: AttributeError: 'WebDataset' object has no attribute 'nodesplitter'
+
+W20250918 17:18:29 3105273 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105278 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105268 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105283 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105303 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105299 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105314 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105317 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105308 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105322 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105325 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105328 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105337 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105332 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105340 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105344 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105348 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105352 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105358 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105366 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105370 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105374 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105378 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105382 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105386 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105389 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105397 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105393 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105405 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105401 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105433 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+W20250918 17:18:29 3105478 py.warnings warnings.py:110] /home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/webdataset/compat.py:379: UserWarning: WebDataset(shardshuffle=...) is None; set explicitly to False or a number
+  warnings.warn("WebDataset(shardshuffle=...) is None; set explicitly to False or a number")
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank3]:   File "<frozen runpy>", line 88, in _run_code
+[rank3]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 648, in <module>
+[rank3]:     main()
+[rank3]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 644, in main
+[rank3]:     do_train(cfg, model, resume=not args.no_resume)
+[rank3]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 454, in do_train
+[rank3]:     for data in metric_logger.log_every(
+[rank3]:   File "/home/deepcad/xzj/dinov3/dinov3/logging/helpers.py", line 93, in log_every
+[rank3]:     for obj in iterable:
+[rank3]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 734, in __next__
+[rank3]:     data = self._next_data()
+[rank3]:            ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1516, in _next_data
+[rank3]:     return self._process_data(data, worker_id)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1551, in _process_data
+[rank3]:     data.reraise()
+[rank3]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/_utils.py", line 769, in reraise
+[rank3]:     raise exception
+[rank3]: AttributeError: Caught AttributeError in DataLoader worker process 0.
+[rank3]: Original Traceback (most recent call last):
+[rank3]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank3]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank3]:     data.append(next(self.dataset_iter))
+[rank3]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 102, in __iter__
+[rank3]:     for img, per_mean, per_std in self._iter_samples():
+[rank3]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 66, in _iter_samples
+[rank3]:     .nodesplitter(wds.split_by_node)
+[rank3]:      ^^^^^^^^^^^^
+[rank3]: AttributeError: 'WebDataset' object has no attribute 'nodesplitter'
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank0]:   File "<frozen runpy>", line 88, in _run_code
+[rank0]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 648, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 644, in main
+[rank0]:     do_train(cfg, model, resume=not args.no_resume)
+[rank0]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 454, in do_train
+[rank0]:     for data in metric_logger.log_every(
+[rank0]:   File "/home/deepcad/xzj/dinov3/dinov3/logging/helpers.py", line 93, in log_every
+[rank0]:     for obj in iterable:
+[rank0]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 734, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1516, in _next_data
+[rank0]:     return self._process_data(data, worker_id)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1551, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/_utils.py", line 769, in reraise
+[rank0]:     raise exception
+[rank0]: AttributeError: Caught AttributeError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank0]:     data.append(next(self.dataset_iter))
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 102, in __iter__
+[rank0]:     for img, per_mean, per_std in self._iter_samples():
+[rank0]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 66, in _iter_samples
+[rank0]:     .nodesplitter(wds.split_by_node)
+[rank0]:      ^^^^^^^^^^^^
+[rank0]: AttributeError: 'WebDataset' object has no attribute 'nodesplitter'
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank1]:   File "<frozen runpy>", line 88, in _run_code
+[rank1]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 648, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 644, in main
+[rank1]:     do_train(cfg, model, resume=not args.no_resume)
+[rank1]:   File "/home/deepcad/xzj/dinov3/dinov3/train/train.py", line 454, in do_train
+[rank1]:     for data in metric_logger.log_every(
+[rank1]:   File "/home/deepcad/xzj/dinov3/dinov3/logging/helpers.py", line 93, in log_every
+[rank1]:     for obj in iterable:
+[rank1]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 734, in __next__
+[rank1]:     data = self._next_data()
+[rank1]:            ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1516, in _next_data
+[rank1]:     return self._process_data(data, worker_id)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1551, in _process_data
+[rank1]:     data.reraise()
+[rank1]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/_utils.py", line 769, in reraise
+[rank1]:     raise exception
+[rank1]: AttributeError: Caught AttributeError in DataLoader worker process 0.
+[rank1]: Original Traceback (most recent call last):
+[rank1]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank1]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/deepcad/anaconda3/envs/dinov3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank1]:     data.append(next(self.dataset_iter))
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 102, in __iter__
+[rank1]:     for img, per_mean, per_std in self._iter_samples():
+[rank1]:   File "/home/deepcad/xzj/dinov3/dinov3/data/datasets/cpjump1_wds.py", line 66, in _iter_samples
+[rank1]:     .nodesplitter(wds.split_by_node)
+[rank1]:      ^^^^^^^^^^^^
+[rank1]: AttributeError: 'WebDataset' object has no attribute 'nodesplitter'
+

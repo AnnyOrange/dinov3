@@ -272,9 +272,38 @@ def init_fsdp_model_from_checkpoint(
     keys_not_sharded: List[str] | None = None,
     process_group: dist.ProcessGroup = None,
 ):
-    if not Path(checkpoint_path).is_dir():  # PyTorch standard checkpoint
+    if not Path(checkpoint_path).is_dir():  # PyTorch standard checkpoint (consolidated .pth)
         logger.info(f"Loading pretrained weights from {checkpoint_path}")
-        chkpt = torch.load(checkpoint_path, map_location="cpu")["teacher"]
+        raw_obj = torch.load(checkpoint_path, map_location="cpu")
+        # Heuristics: accept multiple layouts {teacher|student|model|state_dict}->{...} or direct state_dict
+        candidate_keys = ["teacher", "model", "student", "state_dict", "backbone", "network"]
+        if isinstance(raw_obj, dict):
+            inner = None
+            for k in candidate_keys:
+                if k in raw_obj and isinstance(raw_obj[k], dict):
+                    inner = raw_obj[k]
+                    break
+            chkpt = inner if inner is not None else raw_obj
+        else:
+            chkpt = raw_obj
+
+        # Normalize common prefixes and map to our ModuleDict keys
+        normalized = {}
+        for k, v in chkpt.items():
+            # strip DDP
+            if k.startswith("module."):
+                k = k[len("module."):]
+            # strip possible teacher./student./model. wrappers
+            for prefix in ("teacher.", "student.", "model."):
+                if k.startswith(prefix):
+                    k = k[len(prefix):]
+            normalized[k] = v
+
+        # If keys don't already target our top-level ModuleDict ("backbone."), add it
+        if not any(k.startswith("backbone.") for k in normalized.keys()):
+            normalized = {f"backbone.{k}": v for k, v in normalized.items()}
+
+        chkpt = normalized
         from torch.distributed.device_mesh import DeviceMesh, init_device_mesh
 
         if process_group is None:
@@ -298,7 +327,8 @@ def init_fsdp_model_from_checkpoint(
                 key: tensor
                 for key, tensor in chkpt.items()
                 if not any(skip_load_key in key for skip_load_key in skip_load_keys)
-            }
+            },
+            strict=False,
         )
     else:  # DCP checkpoint
         load_checkpoint(ckpt_dir=checkpoint_path, model=model, process_group=process_group)
@@ -312,11 +342,16 @@ def init_model_from_checkpoint_for_evals(
     if checkpoint_key is not None and checkpoint_key in state_dict:
         logger.info(f"Take key {checkpoint_key} in provided checkpoint dict")
         state_dict = state_dict[checkpoint_key]
+
     # remove `module.` prefix
     state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}
     # remove `backbone.` prefix induced by multicrop wrapper
     state_dict = {k.replace("backbone.", ""): v for k, v in state_dict.items()}
-    msg = model.load_state_dict(state_dict, strict=False)
+
+    # Filter out head-related keys since eval model only has backbone
+    backbone_state_dict = {k: v for k, v in state_dict.items() if not any(head_key in k for head_key in ['dino_head', 'ibot_head'])}
+
+    msg = model.load_state_dict(backbone_state_dict, strict=True)
     logger.info("Pretrained weights found at {} and loaded with msg: {}".format(pretrained_weights, msg))
 
 
